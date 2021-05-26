@@ -1,3 +1,3 @@
-provider "scaffolding" {
+provider "minikube" {
   # example configuration here
 }

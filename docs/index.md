@@ -1,18 +1,18 @@
 ---
-page_title: "scaffolding Provider"
+page_title: "minikube Provider"
 subcategory: ""
 description: |-
   
 ---
 
-# scaffolding Provider
+# minikube Provider
 
 
 
 ## Example Usage
 
 ```terraform
-provider "scaffolding" {
+provider "minikube" {
   # example configuration here
 }
 ```
