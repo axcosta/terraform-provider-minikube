@@ -1,4 +1,4 @@
-package provider
+package minikube
 
 import (
 	"context"
@@ -7,15 +7,15 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func resourceMinikubeCluster() *schema.Resource {
+func resourceCluster() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
 		Description: "Sample resource in the Terraform provider Minikube.",
 
-		CreateContext: resourceMinikubeClusterCreate,
-		ReadContext:   resourceMinikubeClusterRead,
-		UpdateContext: resourceMinikubeClusterUpdate,
-		DeleteContext: resourceMinikubeClusterDelete,
+		CreateContext: resourceClusterCreate,
+		ReadContext:   resourceClusterRead,
+		UpdateContext: resourceClusterUpdate,
+		DeleteContext: resourceClusterDelete,
 
 		Schema: map[string]*schema.Schema{
 			"sample_attribute": {
@@ -28,7 +28,7 @@ func resourceMinikubeCluster() *schema.Resource {
 	}
 }
 
-func resourceMinikubeClusterCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceClusterCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
@@ -38,21 +38,21 @@ func resourceMinikubeClusterCreate(ctx context.Context, d *schema.ResourceData, 
 	return diag.Errorf("not implemented")
 }
 
-func resourceMinikubeClusterRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceClusterRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceMinikubeClusterUpdate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceClusterUpdate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
 	return diag.Errorf("not implemented")
 }
 
-func resourceMinikubeClusterDelete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func resourceClusterDelete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 

@@ -1,4 +1,4 @@
-package provider
+package minikube
 
 import (
 	"context"
@@ -27,10 +27,10 @@ func New(version string) func() *schema.Provider {
 	return func() *schema.Provider {
 		p := &schema.Provider{
 			DataSourcesMap: map[string]*schema.Resource{
-				"minikube_cluster": dataSourceMinikubeCluster(),
+				"minikube_cluster": dataSourceCluster(),
 			},
 			ResourcesMap: map[string]*schema.Resource{
-				"minikube_cluster": resourceMinikubeCluster(),
+				"minikube_cluster": resourceCluster(),
 			},
 		}
 

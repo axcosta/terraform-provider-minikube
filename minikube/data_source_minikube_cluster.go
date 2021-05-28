@@ -1,4 +1,4 @@
-package provider
+package minikube
 
 import (
 	"context"
@@ -7,12 +7,12 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
-func dataSourceMinikubeCluster() *schema.Resource {
+func dataSourceCluster() *schema.Resource {
 	return &schema.Resource{
 		// This description is used by the documentation generator and the language server.
 		Description: "Sample data source in the Terraform provider Minikube.",
 
-		ReadContext: dataSourceMinikubeClusterRead,
+		ReadContext: dataSourceClusterRead,
 
 		Schema: map[string]*schema.Schema{
 			"sample_attribute": {
@@ -25,7 +25,7 @@ func dataSourceMinikubeCluster() *schema.Resource {
 	}
 }
 
-func dataSourceMinikubeClusterRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+func dataSourceClusterRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	// use the meta value to retrieve your client from the provider configure method
 	// client := meta.(*apiClient)
 
