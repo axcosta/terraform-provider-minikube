@@ -1,5 +1,9 @@
 # Terraform Provider for Minikube
 
+## Overview
+
+The Terraform Provider for Minikube enables Terraform to provision local Minikube clusters. This is based on [Jeff Gensler's Minikube provider project](https://github.com/jgensler8/terraform-provider-minikube).
+
 ## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.13.x
@@ -7,11 +11,11 @@
 
 ## Organization
 
-- Code is at `internal/provider/` folder,
+- Code is at `minikube/` folder,
 - Examples (`examples/`) and generated documentation (`docs/`),
 - Miscellaneous meta files at `/` and `tools/`
 
-## Building The Provider
+## Building the provider
 
 1. Clone the repository
 2. Enter the repository directory
@@ -67,4 +71,4 @@ make testacc
 
 ## Publishing the provider
 
-Once you've written your provider, you'll want to [publish it on the Terraform Registry](https://www.terraform.io/docs/registry/providers/publishing.html) so that others can use it.
+[Publish it on the Terraform Registry](https://www.terraform.io/docs/registry/providers/publishing.html) so that others can use it.

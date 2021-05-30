@@ -1,14 +1,13 @@
 package minikube
 
 import (
-	"regexp"
 	"testing"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
 
 func TestAccResourceCluster(t *testing.T) {
-	t.Skip("resource not yet implemented, remove this once you add your own code")
+	// t.Skip("resource not yet implemented, remove this once you add your own code")
 
 	resource.UnitTest(t, resource.TestCase{
 		PreCheck:          func() { testAccPreCheck(t) },
@@ -17,8 +16,8 @@ func TestAccResourceCluster(t *testing.T) {
 			{
 				Config: testAccResourceCluster,
 				Check: resource.ComposeTestCheckFunc(
-					resource.TestMatchResourceAttr(
-						"minikube_cluster.foo", "sample_attribute", regexp.MustCompile("^ba")),
+					resource.TestCheckResourceAttr(
+						"minikube_cluster.test", "name", "minikube"),
 				),
 			},
 		},
@@ -26,7 +25,6 @@ func TestAccResourceCluster(t *testing.T) {
 }
 
 const testAccResourceCluster = `
-resource "minikube_cluster" "foo" {
-	sample_attribute = "bar"
+resource "minikube_cluster" "test" {	
 }
 `
