@@ -37,7 +37,7 @@ func main() {
 	opts := &plugin.ServeOpts{ProviderFunc: minikube.New(version)}
 
 	if debugMode {
-		err := plugin.Debug(context.Background(), "registry.terraform.io/axcosta/terraform-provider-minikube", opts)
+		err := plugin.Debug(context.Background(), "github.com/axcosta/terraform-provider-minikube", opts)
 		if err != nil {
 			log.Fatal(err.Error())
 		}

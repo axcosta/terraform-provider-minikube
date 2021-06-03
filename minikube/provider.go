@@ -26,9 +26,6 @@ func init() {
 func New(version string) func() *schema.Provider {
 	return func() *schema.Provider {
 		p := &schema.Provider{
-			DataSourcesMap: map[string]*schema.Resource{
-				"minikube_cluster": dataSourceCluster(),
-			},
 			ResourcesMap: map[string]*schema.Resource{
 				"minikube_cluster": resourceCluster(),
 			},
@@ -48,9 +45,9 @@ type apiClient struct {
 
 func configure(version string, p *schema.Provider) func(context.Context, *schema.ResourceData) (interface{}, diag.Diagnostics) {
 	return func(context.Context, *schema.ResourceData) (interface{}, diag.Diagnostics) {
-		// Setup a User-Agent for your API client (replace the provider name for yours):
-		// userAgent := p.UserAgent("terraform-provider-scaffolding", version)
-		// TODO: myClient.UserAgent = userAgent
+		// Setup a User-Agent for your API client:
+		// userAgent := p.UserAgent("terraform-provider-minikube", version)
+		// myClient.UserAgent = userAgent
 
 		return &apiClient{}, nil
 	}
